@@ -1,0 +1,34 @@
+PROCEDURE sort(var arr:ARRAY OF INTEGER)
+VAR
+     j , aux : INTEGER;
+BEGIN
+      FOR i FROM 0 TO n STEP  1  DO
+         FOR j = i+1 and j>0  STEP -1  DO
+            IF (arr[j] < arr[j-1]) THEN
+                aux := arr[j];
+                arr[j] := arr[j-1];
+                arr[j-1] := aux;
+            END_IF
+         END_FOR
+END
+
+
+ALGORITHM insertion_sort
+VAR
+    arr  : ARRAY OF INTEGER[];
+    n , i : INTEGER;
+BEGIN
+  REPEAT
+    write("set the array size");
+    read("n");
+   UNTIL (n<0)
+   n:= n-1;
+FOR i FROM 0 TO n STEP 1  DO
+    write("fill the array with values");
+    read(arr[i]);
+END_FOR
+ sort(arr);
+FOR i FROM 0 TO n STEP 1  DO
+    write(arr[i]);
+END_FOR
+END
